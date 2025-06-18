@@ -1,15 +1,13 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
 	content: [
+		"./index.html",
+		"./src/**/*.{js,ts,jsx,tsx}",
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
 	],
-	prefix: "",
 	theme: {
 		container: {
 			center: true,
@@ -20,62 +18,74 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				// Primary colors
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#1a3b47', // Dark teal
+					foreground: '#ffffff', // White text on primary
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#87ceeb', // Light blue
+					foreground: '#1e293b', // Dark text on secondary
 				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+				
+				// Background colors
+				background: '#f8fafc', // Light gray background
+				foreground: '#1e293b', // Primary text (dark gray)
+				
+				// Card colors
+				card: {
+					DEFAULT: '#ffffff', // White cards
+					foreground: '#1e293b', // Primary text on cards
 				},
+				
+				// Status colors
 				success: {
-					DEFAULT: 'hsl(var(--success))',
-					foreground: 'hsl(var(--success-foreground))'
+					DEFAULT: '#22c55e', // Success green
+					foreground: '#ffffff', // White text on success
 				},
 				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					foreground: 'hsl(var(--warning-foreground))'
+					DEFAULT: '#f59e0b', // Warning orange
+					foreground: '#ffffff', // White text on warning
 				},
+				destructive: {
+					DEFAULT: '#ef4444', // Error red
+					foreground: '#ffffff', // White text on error
+				},
+				info: {
+					DEFAULT: '#3b82f6', // Info blue
+					foreground: '#ffffff', // White text on info
+				},
+				
+				// Muted colors
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: '#f1f5f9', // Muted background
+					foreground: '#64748b', // Secondary text (medium gray)
 				},
+				
+				// Accent colors
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: '#87ceeb', // Light blue accent
+					foreground: '#1a3b47', // Dark teal text on accent
 				},
+				
+				// Popover colors
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: '#ffffff', // White popovers
+					foreground: '#1e293b', // Text on popovers
 				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				
+				// Border and input colors
+				border: '#e2e8f0', // Light border
+				input: '#e2e8f0', // Input border
+				ring: '#1a3b47', // Focus ring (primary)
+				
+				// Text color utilities
+				'text-light': '#94a3b8', // Light text for placeholders
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '12px',
+				md: '10px',
+				sm: '8px'
 			},
 			keyframes: {
 				'accordion-down': {
